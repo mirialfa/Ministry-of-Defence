@@ -1,5 +1,3 @@
-// export default CategoriesList;
-// CategoriesList.jsx
 import React, { useEffect,useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Typography, List, ListItem, Badge, Button } from '@mui/material';
@@ -7,8 +5,8 @@ import { fetchCategories } from '../store/categoriesSlice';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import CategoryDetail from './CategoryDetail';
-import ShoppingCart from './ShoppingCart';
-
+import ShoppingCart from './ShoppingCart'; 
+import "./CategoriesList.css"
 
 const CategoriesList = () => {
   const dispatch = useDispatch();
@@ -21,36 +19,38 @@ const CategoriesList = () => {
   }, [dispatch]);
 
   const handleCategoryClick = (categoryId) => {
-    // navigate(`/categories/${categoryId}`);
     setSelectedCategoryId(categoryId)
   };
 
-  return (
-    <div style={{display:'flex',flexDirection:'row'}}>
-      <Typography variant="h4">
-        Categories{' '}
-        {/* <Badge badgeContent={cart.length} color="primary">
-          Cart
-          <Link to="/cart">Cart</Link>
-        </Badge> */}
-      </Typography>
-      <List>
-        {categories.map((category) => (
-          <ListItem key={category.id} onClick={() => handleCategoryClick(category.id)}>
-            {category.name}
-          </ListItem>
-        ))}
-      </List>
-      {
-        selectedCategoryId&&
-        <CategoryDetail categoryId={selectedCategoryId}/>
-      }
-      <ShoppingCart/>
-      <Button onClick={()=>navigate(`/OrderSummary`)}>
-                 סיים הזמנה
-        </Button>
-    </div>
-  );
+  // CategoriesList.jsx
+
+return (
+  <div className="categories-container">
+    <Typography variant="h4" className="category-title">
+      רשימת קניות
+    </Typography>
+    <List className="category-list">
+      {categories.map((category) => (
+        <ListItem
+          key={category.id}
+          className="category-item"
+          onClick={() => handleCategoryClick(category.id)}
+        >
+          {category.name}
+        </ListItem>
+      ))}
+    </List>
+    {selectedCategoryId && <CategoryDetail categoryId={selectedCategoryId} />}
+    <ShoppingCart />
+    <Button
+      className="order-summary-button"
+      onClick={() => navigate(`/OrderSummary`)}
+    >
+      סיים הזמנה
+    </Button>
+  </div>
+);
+
 };
 
 export default CategoriesList;

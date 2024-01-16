@@ -1,6 +1,5 @@
 const { Item } = require('../models/item')
 
-// Controller function to get the total number of items
 const getTotalItems = async (req, res) => {
   try {
     const totalItems = await Item.all();

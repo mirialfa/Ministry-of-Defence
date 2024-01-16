@@ -1,8 +1,7 @@
-// OrderSummaryPage.jsx
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
 import Success from './Success';
+import ShoppingCart from './ShoppingCart'
 
 const OrderSummaryPage = () => {
   const cart = useSelector((state) => state.cart);
@@ -12,9 +11,6 @@ const OrderSummaryPage = () => {
     email: '',
   });
   const [successfully, setSuccess] = useState(false);
-
-//   const history = useHistory();
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -24,9 +20,6 @@ const OrderSummaryPage = () => {
   };
 
   const handleConfirmOrder = () => {
-    // Perform validation on form data if needed
-
-    // Create an object to send to the server
     const orderData = {
         name: formData.fullName,
         address: formData.address,
@@ -34,7 +27,6 @@ const OrderSummaryPage = () => {
         items: JSON.stringify(cart),
     };
 
-    // Assuming you have an API endpoint to send the order data
     fetch('https://localhost:7277/order', {
       method: 'POST',
       headers: {
@@ -44,29 +36,19 @@ const OrderSummaryPage = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle success (you may redirect to a thank you page)
         setSuccess(true);
         console.log('Order submitted successfully:', data);
-        // Clear the cart after placing the order
-        // dispatch(clearCart());
-        // Redirect to a thank you page or any other page
-        // history.push('/thank-you');
       })
       .catch((error) => {
-        // Handle error
         console.error('Error submitting order:', error);
       });
   };
 
   return (
-    <div>
-      <h2>Order Summary</h2>
+    <div >
+      <h2>סיכום הזמנה</h2>
       <ul>
-        {cart.map((item) => (
-          <li key={item.id}>
-            {item.name} - Quantity: {item.quantity || 1}
-          </li>
-        ))}
+        <ShoppingCart/>
       </ul>
       <h2>Personal Details</h2>
       <form>

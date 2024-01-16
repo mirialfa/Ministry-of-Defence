@@ -1,4 +1,3 @@
-// models/index.js
 const Category = require('./category');
 const Item = require('./item');
 

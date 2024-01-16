@@ -1,5 +1,3 @@
-
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -17,9 +15,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<CategoriesList />} exact />
           <Route path="/OrderSummary" element={<OrderSummaryPage  />}></Route>
-
-          {/* <Route path="/categories/:categoryId" element={<CategoryDetail />} /> */}
-          {/* <Route path="/cart" element={<ShoppingCart />} /> New route for the shopping cart */}
         </Routes>
       </Router>
     </Provider>

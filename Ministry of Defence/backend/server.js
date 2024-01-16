@@ -3,7 +3,6 @@ const cors = require("cors");
 
 const app = express();
 
-// const itemRoutes = require('./routes/itemRoutes');
 const categoriesRouter = require('./routs/categoryRouters');
 
 app.use(cors()); // Enable CORS for all routes
