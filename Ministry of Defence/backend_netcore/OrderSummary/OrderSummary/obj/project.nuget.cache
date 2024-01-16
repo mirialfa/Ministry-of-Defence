@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4TzKW7kTkS+36/8lXd8Nj3InOKhzJh/6BOBUo2t0cSQtG0hebZaA1/lTT/sFo4aOwBhu2ovutVjeZG0Q+IL7ag==",
+  "dgSpecHash": "yPKHi2WdPmKHNNIBwnKXAnNeroTxDWWAOFA0r375H7MvvjKr8TrXjYThpPdHif0foIHzSa0RMm529W8NpBXcYQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Desktop\\Ministry of Defence\\backend_netcore\\OrderSummary\\OrderSummary\\OrderSummary.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\MIRIAM\\Ministry-of-Defence\\Ministry of Defence\\backend_netcore\\OrderSummary\\OrderSummary\\OrderSummary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
